@@ -52,12 +52,6 @@ button:hover {
       padding: 15px;
 }
 
-h3 {
-      padding: 10px;
-      margin: 0px;
-      font-size: xx-large;
-}
-
 .background {
       padding: 0px;
       margin: 0px;
@@ -84,20 +78,6 @@ h3 {
       width: 100%;
       /* display: grid; */
       /* grid-template-columns: 2fr 2fr 2fr 2fr; */
-}
-
-ul {
-      list-style-type: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0px;
-}
-
-li {
-      margin: 10px;
-      font-size: x-large;
-      text-align: center;
 }
 
 #result {
@@ -146,11 +126,11 @@ h5 {
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-      font-size: xx-large;
+      /* font-size: xx-large; */
       background-color: white;
       color: black;
       cursor: pointer;
-      padding: 18px;
+      padding: 10px;
       margin: 0px;
       width: 100%;
       border: none;
@@ -187,4 +167,30 @@ hr {
       right: 10px;
       font-style: italic;
       color: rgba(0, 0, 0, 0.5);
+}
+
+.hint {
+      font-size: small;
+      color: gray;
+}
+
+ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px;
+      font-weight: normal;
+}
+
+li {
+      margin: 5px;
+      font-size: x-large;
+      text-align: center;
+}
+
+h3 {
+      padding: 5px;
+      margin: 0px;
+      font-size: xx-large;
 }

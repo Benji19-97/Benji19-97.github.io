@@ -7,32 +7,35 @@
 <div id="background2" class="background"></div>
 <html>
       <header>
-            <h1>Enemy Role Generator</h1>
-            <h5>an enemy encounter design tool</h5>
+            <h1>Enemy Generator</h1>
+            <h5>an enemy-encounter design tool and framework</h5>
       </header>
       <body>
             <button id="generate-button">Generate New Enemy</button>
             <div id="result"></div>
             <div class="grid">
                   <div class="block">
-                        <button class="collapsible">Threat Level</button>
-                        <div class="content">
+                        <button class="collapsible">
+                              <h3>Threat Levels</h3>
                               <ul>
-                                    <li>Low</li>
+                                    <li>Low -</li>
                                     <li>Medium</li>
-                                    <li>High</li>
+                                    <li>- High</li>
                               </ul>
+                              <p class="hint">expand to read more</p>
+                        </button>
+                        <div class="content">
                               <div>
                                     <div class="text-block">
-                                          Threat level indicates how strong the enemy is. When designing an encounter,
-                                          depending on the wanted difficulty level, the encounter can be a given a
-                                          maximum enemy-weight. Then, by looking at the threat level as an indicator for
-                                          enemy-weight, the encounter can then be filled with enemies until the maximum
-                                          threat level is reached. Threat level can also be seen as a rough indicator
-                                          for raw stats and numbers like health, ability power and damage of an enemy.
-                                          Enemies with high threat levels usually have higher raw stats than lower
-                                          threat level enemies. Threat level is a scale, enemies can be inbetween the
-                                          given threat levels of low, medium and high.
+                                          Threat level indicates <b>how strong</b> the enemy is. When designing an
+                                          encounter, depending on the wanted difficulty level, the encounter can be a
+                                          given a maximum enemy-weight. Then, by looking at the threat level as an
+                                          indicator for enemy-weight, the encounter can then be filled with enemies
+                                          until the maximum threat level is reached. Threat level can also be seen as a
+                                          rough indicator for raw stats and numbers like health, ability power and
+                                          damage of an enemy. Enemies with high threat levels usually have higher raw
+                                          stats than lower threat level enemies. Threat level is a scale, enemies can be
+                                          inbetween the given threat levels of low, medium and high.
                                     </div>
                                     <hr />
                                     <div class="enemy-example">
@@ -78,8 +81,8 @@
                                           </div>
                                     </div>
                                     <p>
-                                          TLDR: High threat level enemies are strong and rare. Low threat level enemies
-                                          are common and weak.
+                                          <b>TLDR:</b> High threat level enemies are strong and rare. Low threat level
+                                          enemies are common and weak.
                                     </p>
 
                                     <a href="https://www.youtube.com/channel/UC1uug_uZrVmylfPVBLBvitQ"
@@ -90,12 +93,15 @@
                   </div>
 
                   <div class="block">
-                        <button class="collapsible">Behaviour</button>
-                        <div class="content">
+                        <button class="collapsible">
+                              <h3>Behaviour Types</h3>
                               <ul>
-                                    <li>Active</li>
+                                    <li>Active -</li>
                                     <li>Passive</li>
                               </ul>
+                              <p class="hint">expand to read more</p>
+                        </button>
+                        <div class="content">
                               <hr />
                               <div class="text-block">
                                     The behaviour type of the enemy describes if the enemy will actively goes out of
@@ -137,14 +143,16 @@
                   </div>
 
                   <div class="block">
-                        <button class="collapsible">Goal</button>
-                        <div class="content">
+                        <button class="collapsible">
+                              <h3>Goals</h3>
                               <ul>
-                                    <li>Attack</li>
+                                    <li>Attack -</li>
                                     <li>Disrupt</li>
-                                    <li>Support</li>
+                                    <li>- Support</li>
                               </ul>
-
+                              <p class="hint">expand to read more</p>
+                        </button>
+                        <div class="content">
                               <div class="text-block">
                                     Any enemies goal can fit into one of these 3 categories. These goals are similar to
                                     the player class roles of tank, dps and support, but for enemies.
@@ -205,14 +213,16 @@
                   </div>
 
                   <div class="block">
-                        <button class="collapsible">Range</button>
-                        <div class="content">
+                        <button class="collapsible">
+                              <h3>Range</h3>
                               <ul>
-                                    <li>Long</li>
+                                    <li>Long -</li>
                                     <li>Mid</li>
-                                    <li>Close</li>
+                                    <li>- Close</li>
                               </ul>
-
+                              <p class="hint">expand to read more</p>
+                        </button>
+                        <div class="content">
                               <div class="text-block">
                                     It is important to keep in mind that enemies can work at all kinds of different
                                     ranges, regardless of their behaviour and goal. Often when designing enemies, there
