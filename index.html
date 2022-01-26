@@ -1,5 +1,248 @@
-<h1>Enemy Generator</h1>
+<!DOCTYPE html>
+<head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="styles.css" />
+</head>
+<div id="background1" class="background"></div>
+<div id="background2" class="background"></div>
+<html>
+      <header>
+            <h1>Enemy Role Generator</h1>
+            <h5>an enemy encounter design tool</h5>
+      </header>
+      <body>
+            <button id="generate-button">Generate New Enemy</button>
+            <div id="result"></div>
+            <div class="grid">
+                  <div class="block">
+                        <button class="collapsible">Threat Level</button>
+                        <div class="content">
+                              <ul>
+                                    <li>Low</li>
+                                    <li>Medium</li>
+                                    <li>High</li>
+                              </ul>
+                              <div>
+                                    <div class="text-block">
+                                          Threat level indicates how strong the enemy is. When designing an encounter,
+                                          depending on the wanted difficulty level, the encounter can be a given a
+                                          maximum enemy-weight. Then, by looking at the threat level as an indicator for
+                                          enemy-weight, the encounter can then be filled with enemies until the maximum
+                                          threat level is reached. Threat level can also be seen as a rough indicator
+                                          for raw stats and numbers like health, ability power and damage of an enemy.
+                                          Enemies with high threat levels usually have higher raw stats than lower
+                                          threat level enemies. Threat level is a scale, enemies can be inbetween the
+                                          given threat levels of low, medium and high.
+                                    </div>
+                                    <hr />
+                                    <div class="enemy-example">
+                                          <h4>Zergling - Low Threat Level</h4>
+                                          <div class="enemy-block">
+                                                <img src="enemies/zergling.png" />
+                                                <p class="enemy-description">
+                                                      "The Zergling is a small and fast melee attacker and the backbone
+                                                      of the Zerg army. Individual Zerglings are weak, but large groups
+                                                      can surround and terrorize enemy ground forces."
+                                                </p>
+                                          </div>
+                                    </div>
+                                    <hr />
+                                    <div class="enemy-example">
+                                          <h4>Ultralisk - High Threat Level</h4>
+                                          <div class="enemy-block">
+                                                <p class="enemy-description">
+                                                      "Ultralisks are the most powerful ground strain the Swarm
+                                                      possesses, their genetic material has been subject to countless
+                                                      test and experiments and only the final viable code is utilized by
+                                                      larvae. Living battering rams, ultralisks serve as the backbone of
+                                                      the Swarm, and serve as its siegebreaker."
+                                                </p>
+                                                <img src="enemies/ultralisk.png" />
+                                          </div>
+                                    </div>
 
-<button id="generate-button">Generate Enemy</button>
-<div id="result"></div>
-<script src="main.js"></script>
+                                    <div>
+                                          <div class="scale-example">
+                                                <p>Let's assume 3 Zerglings have about the weight of 1 Ultralisk.</p>
+                                                <img class="small-image" src="enemies/Scale2.png" />
+                                          </div>
+
+                                          <div class="scale-example">
+                                                <p>
+                                                      In the current setup of our encounters, one encounter is slightly
+                                                      more difficulty than the other. If this isn't what we intend to
+                                                      do, we can now balance our encounter difficulties by keeping the
+                                                      scales even.
+                                                </p>
+                                                <img class="small-image" src="enemies/Scale1.png" />
+                                          </div>
+                                    </div>
+                                    <p>
+                                          TLDR: High threat level enemies are strong and rare. Low threat level enemies
+                                          are common and weak.
+                                    </p>
+
+                                    <a href="https://www.youtube.com/channel/UC1uug_uZrVmylfPVBLBvitQ"
+                                          >Zerg pictures by CarbotAnimations on YouTube</a
+                                    >
+                              </div>
+                        </div>
+                  </div>
+
+                  <div class="block">
+                        <button class="collapsible">Behaviour</button>
+                        <div class="content">
+                              <ul>
+                                    <li>Active</li>
+                                    <li>Passive</li>
+                              </ul>
+                              <hr />
+                              <div class="text-block">
+                                    The behaviour type of the enemy describes if the enemy will actively goes out of
+                                    it's way to accomplish it's assigned goal.
+                              </div>
+                              <div class="text-block">
+                                    <b>Active enemies</b> will actively seek out ways to accomplish their goal, active
+                                    enemies can also be thought of as proactive enemies. These enemies will make sure to
+                                    take steps to accomplish their goal. Most enemies in games will be active enemies.
+                              </div>
+                              <div class="enemy-block">
+                                    <p class="enemy-description">
+                                          "The Wretched Thug enemy type in Hades will actively seek out to punch Zagreus
+                                          in the face with their giant mace."
+                                    </p>
+                                    <img src="enemies/WretchedThug.png" />
+                              </div>
+                              <div class="text-block">
+                                    <b>Passive enemies</b> on the other hand are not actively seeking out steps to
+                                    accomplish their goal. Passive enemies can also be thought of as reactive enemies,
+                                    they strike when an opportunity arises but won't go out of their comfort zone to do
+                                    so.
+                              </div>
+                              <div class="enemy-block">
+                                    <img src="enemies/Skullomat.png" />
+                                    <p class="enemy-description">
+                                          "The Skullomat enemy type in Hades has no offensive or defensive capabilities
+                                          other than spawning another type of enemy called Numbskulls."
+                                    </p>
+                              </div>
+                              <div class="enemy-block">
+                                    <p class="enemy-description">
+                                          "The Man Eater enemy type in Terraria can't move away from it's spawn location
+                                          but will attack the player if they are in range of an attack."
+                                    </p>
+                                    <img src="enemies/ManEater.png" />
+                              </div>
+                        </div>
+                  </div>
+
+                  <div class="block">
+                        <button class="collapsible">Goal</button>
+                        <div class="content">
+                              <ul>
+                                    <li>Attack</li>
+                                    <li>Disrupt</li>
+                                    <li>Support</li>
+                              </ul>
+
+                              <div class="text-block">
+                                    Any enemies goal can fit into one of these 3 categories. These goals are similar to
+                                    the player class roles of tank, dps and support, but for enemies.
+                              </div>
+                              <div class="text-block">
+                                    <b>Attack-Goal-Enemies</b> are enemies with the main and only goal to attack or
+                                    damage the player directly or indirectly. This type of enemy is the first thing
+                                    everybody thinks of when thinking of enemies in games.
+                              </div>
+                              <div class="enemy-block">
+                                    <p class="enemy-description">
+                                          "Most of Enter The Gungeons gundead enemies like the bullet kin, seek out to
+                                          inflict pain to the player."
+                                    </p>
+                                    <img src="enemies/Gundead.png" />
+                              </div>
+                              <div class="text-block">
+                                    <b>Disrupt-Goal-Enemies</b> are enemies with the goal of disrupting the player in
+                                    their intended way of playing the game. Disrupter enemies can be simple, for example
+                                    tank-style enemies which will put themselves in harms way or complex, setting up
+                                    traps or shifting terrain to disrupt the player. It is important to mention that all
+                                    goals can involve attacking or damaging the player, often disrupter enemies will
+                                    need to backup the pressure they apply with punishment if the player doesn't abide
+                                    to the rules the enemy set up. E.g.: the player gets damaged. So while still being
+                                    able to inflict damage to the player, their main goal isn't in damaging the player
+                                    but disrupting the player to enable other enemies in the encounter to exceed in
+                                    their own goals.
+                              </div>
+                              <div class="enemy-block">
+                                    <img src="enemies/Grotesque.png" />
+                                    <p class="enemy-description">
+                                          "Diablo III's Grotesques enemy type is an undead enemy that specialices in
+                                          having a lot of health and attempting to explode close to the player. This
+                                          enemy distracts and blocks the player from firing at weaker targets in the
+                                          backlines as well as forcing the player to reposition when they explode."
+                                    </p>
+                              </div>
+                              <div class="enemy-block">
+                                    <p class="enemy-description">
+                                          "Arrogant Lobsters in Gunfire Reborn are backline tanks that will rain
+                                          hellfire upon the player, forcing players to push in and focus fire on the
+                                          enemy instead of killing weaker enemies in closer proximity."
+                                    </p>
+                                    <img src="enemies/ArrogantLobster.png" />
+                              </div>
+                              <div class="text-block">
+                                    <b>Support-Goal-Enemies</b> are enemies with the goal of supporting other enemies.
+                                    This can include spreading buffs or heals to other enemies.
+                              </div>
+                              <div class="enemy-block">
+                                    <img src="enemies/Archvale.png" />
+                                    <p class="enemy-description">
+                                          "High Temple Priests in Archvale will heal and buff nearby enemies to aid them
+                                          in battle."
+                                    </p>
+                              </div>
+                        </div>
+                  </div>
+
+                  <div class="block">
+                        <button class="collapsible">Range</button>
+                        <div class="content">
+                              <ul>
+                                    <li>Long</li>
+                                    <li>Mid</li>
+                                    <li>Close</li>
+                              </ul>
+
+                              <div class="text-block">
+                                    It is important to keep in mind that enemies can work at all kinds of different
+                                    ranges, regardless of their behaviour and goal. Often when designing enemies, there
+                                    is a trap to fall into, designing the same enemies over and over again. Tank-type
+                                    enemies often will be close range and sniper enemies will always be long range, but
+                                    they don't have to be.
+                              </div>
+                              <div class="enemy-block">
+                                    <img
+                                          src="https://static.wikia.nocookie.net/nuclear-throne/images/f/f2/Assassin_idle.gif/revision/latest/scale-to-width-down/72?cb=20140620145346"
+                                    />
+                                    <p class="enemy-description">
+                                          "Nuclear Throne's fittingly named enemy "Assassin" is a close range attacker
+                                          dealing extremely high damage, effectively being a melee sniper."
+                                    </p>
+                              </div>
+                              <div class="enemy-block">
+                                    <p class="enemy-description">
+                                          "Channelers in Dark Souls are surprisingly tanky backline enemies that suffice
+                                          multiple roles and goals. They can buff nearby enemies, they can attack at
+                                          long range with magic and they can also stab the player at close range with
+                                          their tridents."
+                                    </p>
+                                    <img
+                                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2TRQxwyBYZTUocR82dHestzqfLkMrTfXQN6CSW2yFJlaW_izL-RXIlzEKxVhiXIJxT_0&usqp=CAU"
+                                    />
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <script src="main.js"></script>
+      </body>
+</html>
